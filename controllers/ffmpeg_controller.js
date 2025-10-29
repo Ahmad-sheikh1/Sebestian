@@ -4,17 +4,19 @@ const axios = require("axios");
 const { v4: uuidv4 } = require("uuid");
 const { exec } = require("child_process");
 const { promisify } = require("util");
-const ffmpegInstaller = require("@ffmpeg-installer/ffmpeg");
+// const ffmpegInstaller = require("@ffmpeg-installer/ffmpeg");
 const { uploadToS3, isS3Configured } = require("../helpers/s3Upload");
 
 const execAsync = promisify(exec);
 const TEMP_DIR = path.join(process.cwd(), "temp");
 
 // Get FFmpeg path automatically for all platforms
-const FFMPEG_PATH = ffmpegInstaller.path;
+// const FFMPEG_PATH = ffmpegInstaller.path;
+const FFMPEG_PATH = "/usr/bin/ffmpeg";
 
-console.log(`[FFmpeg] Using FFmpeg at: ${FFMPEG_PATH}`);
-console.log(`[FFmpeg] FFmpeg version: ${ffmpegInstaller.version}`);
+
+// console.log(`[FFmpeg] Using FFmpeg at: ${FFMPEG_PATH}`);
+// console.log(`[FFmpeg] FFmpeg version: ${ffmpegInstaller.version}`);
 
 // Ensure temp directory exists on startup (no cleanup - will be done on first API call)
 (async () => {

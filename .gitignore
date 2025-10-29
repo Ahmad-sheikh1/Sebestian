@@ -1,0 +1,70 @@
+# Dependencies
+node_modules/
+package-lock.json
+
+# Environment variables
+.env
+.env.local
+.env.production
+
+# Temporary files
+temp/
+*.tmp
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build files
+dist/
+build/
+
+# PM2 files
+.pm2/
+*.pid
+
+# Test files
+test*.js
+test*.json
+
+# Backup files
+*.bak
+*_backup.js
+*_fixed.js
+
+# Video files (output)
+*.mp4
+*.mov
+*.avi
+
+# Audio files (temp)
+*.mp3
+*.wav
+*.ogg
+
+# Image files (temp)
+*.jpg
+*.jpeg
+*.png
+*.gif
+*.webp
+
+# Coverage
+coverage/
+.nyc_output/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*

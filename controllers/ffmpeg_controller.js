@@ -383,7 +383,7 @@ const Convert = async (req, res) => {
       const fontFile = "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf";
 
       // Build drawtext filter for thumbnail (same text as video)
-      const thumbnailTextFilter = `drawtext=fontfile='${fontFile}':text='${escapedVibe}':fontsize=72:fontcolor=white:x=(w-text_w)/2:y=(h-text_h)/2-80:borderw=3:bordercolor=black,drawtext=fontfile='${fontFile}':text='${escapedSubtitle}':fontsize=48:fontcolor=white:x=(w-text_w)/2:y=(h-text_h)/2+40:borderw=2:bordercolor=black`;
+      const thumbnailTextFilter = `drawtext=fontfile='${fontFile}':text='${escapedVibe}':fontsize=92:fontcolor=white:x=(w-text_w)/2:y=(h-text_h)/2-80:borderw=3:bordercolor=black,drawtext=fontfile='${fontFile}':text='${escapedSubtitle}':fontsize=68:fontcolor=white:x=(w-text_w)/2:y=(h-text_h)/2+40:borderw=2:bordercolor=black`;
 
       // Create thumbnail (1920x1080) with text overlay
       const thumbnailCommand = `"${FFMPEG_PATH}" -y -i "${imagePath}" -vf "scale=1920:1080:force_original_aspect_ratio=increase,crop=1920:1080,${thumbnailTextFilter}" -frames:v 1 -q:v 2 "${thumbnailFile}"`;

@@ -56,7 +56,7 @@ const uploadToS3 = async (filePath, fileName, contentType = "video/mp4") => {
  */
 const isS3Configured = () => {
   return !!(
-    process.env.AWS_ACCESS_KEY_ID &&
+    process.env.AWS_ACCESS_KEY_ID && 
     process.env.AWS_SECRET_ACCESS_KEY &&
     process.env.AWS_S3_BUCKET
   );

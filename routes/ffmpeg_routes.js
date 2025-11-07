@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const { Convert, getStorageInfo, downloadVideo, downloadThumbnail } = require("../controllers/ffmpeg_controller");
+const { ProcessAudio, CreateThumbnail, CreateVideoFromAudio } = require("../controllers/lat_ffmpeh_controller")
 
 // GET request handler for API status and instructions
 router.get("/create-video", (req, res) => {
@@ -44,5 +45,8 @@ router.get("/storage-info", getStorageInfo);
 // Download endpoints (when S3 not configured)
 router.get("/download/video/:jobId", downloadVideo);
 router.get("/download/thumbnail/:jobId", downloadThumbnail);
+router.post("/finalaudio", ProcessAudio)
+router.post("/thumbnail-creator", CreateThumbnail)
+router.post("/final-video", CreateVideoFromAudio)
 
 module.exports = router;
